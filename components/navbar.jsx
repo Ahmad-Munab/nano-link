@@ -1,24 +1,37 @@
 "use client";
 
-import React from "react";
-import { ClerkLoaded, ClerkLoading, UserButton } from "@clerk/nextjs";
-import MobileSidebar from "./mobile-sidebar";
-import { Skeleton } from "./ui/skeleton";
+import { cn } from "@/lib/utils";
 
-const Navbar = () => {
-  return (
-    <div className="sticky top-0 flex items-center p-4 h-[7%]  bg-white shadow-md border-1  z-10">
-      <MobileSidebar />
-      <div className="flex w-full h-8 justify-end">
-        <ClerkLoading>
-          <Skeleton className="h-10 w-10 rounded-full" />
-        </ClerkLoading>
-        <ClerkLoaded>
-          <UserButton className="h-10 w-10" />
-        </ClerkLoaded>
-      </div>
-    </div>
-  );
+import { Montserrat } from "next/font/google";
+import Link from "next/link";
+import React from "react";
+import NavbarRight from "./small-components/navbar-right";
+import NavbarMid from "./small-components/navbar-mid";
+
+
+const font = Montserrat({
+    weight: "700",
+    subsets: ["latin"],
+});
+
+const Navabar = () => {
+    return (
+        <nav className="py-4 md:px-0 px-4  bg-transparent flex items-center justify-start gap-6 xl:mx-[17%] md:mx-[7%] mx-2">
+            <div className="flex items-center gap-x-2">
+                <Link
+                    href="/"
+                    className={cn(
+                        "md:text-4xl text-3xl text-[#393b42]",
+                        font.className
+                    )}
+                >
+                    NanoLink
+                </Link>
+            </div>
+            <NavbarMid/>
+            <NavbarRight/>
+        </nav>
+    );
 };
 
-export default Navbar;
+export default Navabar;

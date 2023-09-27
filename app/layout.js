@@ -6,8 +6,8 @@ import { cn } from "@/lib/utils";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-    title: "Munab.AI",
-    description: "",
+    title: "Nano Link",
+    description: "An Everyday URL Shortener",
 };
 
 export default function RootLayout({ children }) {

@@ -1,9 +1,9 @@
 import React from "react";
 
-import { LandingHero } from "@/components/landing-hero";
+import Hero from "@/components/hero";
 
 const LandingPage = () => {
-    return <LandingHero />;
+    return <Hero />;
 };
 
 export default LandingPage;
