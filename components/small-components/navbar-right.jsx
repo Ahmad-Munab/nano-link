@@ -15,6 +15,7 @@ import { cn } from "@/lib/utils";
 const NavbarRight = ({ noSideBar, classes }) => {
     const { user } = useUser();
     const { isSignedIn } = useAuth();
+
     return (
         <div className={cn("flex items-center gap-x-4 ml-auto", classes)}>
             {isSignedIn ? (
@@ -23,7 +24,9 @@ const NavbarRight = ({ noSideBar, classes }) => {
                         <Skeleton className="h-10 w-10 rounded-full" />
                     </ClerkLoading>
                     <ClerkLoaded>
-                        <p className="md:block hidden text-2xl  text-black/70 font-semibold">{user?.fullName}</p>
+                        <p className="md:block hidden text-2xl  text-black/70 font-semibold">
+                            {user?.fullName}
+                        </p>
                         <UserButton />
                     </ClerkLoaded>
                 </>
