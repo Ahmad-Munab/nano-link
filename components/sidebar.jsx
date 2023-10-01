@@ -21,7 +21,7 @@ const Sidebar = ({ setOpen }) => {
                 }}
                 className=" space-y-2 py-4 px-2 rounded-lg mx-2 hover:bg-gray-50 transition-all ease-in-out duration-200"
             >
-                <span className="md:text-xl text-lg text-center flex items-center gap-2 font-bold text-black/70">
+                <span className="md:text-xl text-lg text-center flex items-center gap-2 font-bold text-black/70 dark:text-white/90">
                     <Star />
                     Features
                 </span>
@@ -33,7 +33,7 @@ const Sidebar = ({ setOpen }) => {
                 onClick={() => setOpen(false)}
                 className=" space-y-2 py-4 px-2 rounded-lg mx-2 hover:bg-gray-50 transition-all ease-in-out duration-200"
             >
-                <span className="md:text-xl text-lg text-center flex items-center gap-2 font-bold text-black/70">
+                <span className="md:text-xl text-lg text-center flex items-center gap-2 font-bold text-black/70 dark:text-white/90">
                     <CircleDollarSign />
                     Pricing
                 </span>
@@ -50,7 +50,7 @@ const Sidebar = ({ setOpen }) => {
                 }}
                 className=" space-y-2 py-4 px-2 rounded-lg mx-2 hover:bg-gray-50 transition-all ease-in-out duration-200"
             >
-                <span className="md:text-xl text-lg text-center flex items-center gap-2 font-bold text-black/70">
+                <span className="md:text-xl text-lg text-center flex items-center gap-2 font-bold text-black/70 dark:text-white/90">
                     About
                 </span>
                 <hr />

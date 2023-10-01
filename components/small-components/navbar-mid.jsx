@@ -10,7 +10,7 @@ const NavbarMid = () => {
                         .scrollIntoView({ behavior: "smooth" });
                 }}
                 variant="ghost"
-                className="md:text-lg text-sm w-max font-bold text-black/70 rounded-full"
+                className="md:text-lg text-sm w-max font-bold text-black/70 dark:text-white/90 rounded-full"
             >
                 Features
             </Button>
@@ -20,7 +20,7 @@ const NavbarMid = () => {
                     console.log("Will ad contact us modal");
                 }}
                 variant="ghost"
-                className="md:text-lg text-sm w-max font-bold text-black/70 rounded-full"
+                className="md:text-lg text-sm w-max font-bold text-black/70 dark:text-white/90 rounded-full"
             >
                 Contact Us
             </Button>
@@ -32,7 +32,7 @@ const NavbarMid = () => {
                         .scrollIntoView({ behavior: "smooth" });
                 }}
                 variant="ghost"
-                className="md:text-lg text-sm w-max font-bold text-black/70 rounded-full"
+                className="md:text-lg text-sm w-max font-bold text-black/70 dark:text-white/90 rounded-full"
             >
                 About
             </Button>

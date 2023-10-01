@@ -8,7 +8,6 @@ import React from "react";
 import NavbarRight from "./small-components/navbar-right";
 import NavbarMid from "./small-components/navbar-mid";
 
-
 const font = Montserrat({
     weight: "700",
     subsets: ["latin"],
@@ -21,15 +20,15 @@ const Navabar = () => {
                 <Link
                     href="/"
                     className={cn(
-                        "md:text-4xl text-3xl text-[#393b42]",
+                        "md:text-4xl text-3xl text-[#393b42] dark:text-white/90",
                         font.className
                     )}
                 >
                     NanoLink
                 </Link>
             </div>
-            <NavbarMid/>
-            <NavbarRight/>
+            <NavbarMid />
+            <NavbarRight />
         </nav>
     );
 };

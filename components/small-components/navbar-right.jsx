@@ -11,20 +11,24 @@ import MobileSidebar from "../mobile-sidebar";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import ThemeToggler from "../theme-toggler";
 
 const NavbarRight = ({ noSideBar, classes }) => {
     const { user } = useUser();
     const { isSignedIn } = useAuth();
 
     return (
-        <div className={cn("flex items-center gap-x-4 ml-auto", classes)}>
+        <div className={cn("flex items-center md:gap-x-4 gap-x-2 ml-auto", classes, noSideBar ?? "gap-x-4")}>
+            <div className={cn("sm:block hidden", noSideBar && "block")}>
+                <ThemeToggler />
+            </div>
             {isSignedIn ? (
                 <>
                     <ClerkLoading>
                         <Skeleton className="h-10 w-10 rounded-full" />
                     </ClerkLoading>
                     <ClerkLoaded>
-                        <p className="md:block hidden text-2xl  text-black/70 font-semibold">
+                        <p className="md:block hidden text-2xl  text-black/70 dark:text-white/90 font-semibold">
                             {user?.fullName}
                         </p>
                         <UserButton />
@@ -38,7 +42,7 @@ const NavbarRight = ({ noSideBar, classes }) => {
                     >
                         <Button
                             variant="outline"
-                            className="md:text-lg text-sm w-max font-bold text-black/70 rounded-full"
+                            className="md:text-lg text-sm w-max font-bold text-black/70 dark:text-white/90 dark:text-white/90 rounded-full"
                         >
                             Login
                         </Button>
