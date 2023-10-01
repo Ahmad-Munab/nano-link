@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { createUser } from "../lib/user";
 
 export async function POST(req) {
-    console.log(req.headers.origin);
+    // console.log(req.headers.origin);
 
     const {
         data: { id, email_addresses },
