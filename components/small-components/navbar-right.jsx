@@ -12,7 +12,6 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import ThemeToggler from "../theme-toggler";
-import Blur from "./blur";
 
 const NavbarRight = ({ noSideBar, classes }) => {
   const { user } = useUser();
@@ -60,14 +59,12 @@ const NavbarRight = ({ noSideBar, classes }) => {
             </Button>
           </Link>
           <Link href={isSignedIn ? "" : "/sign-up"}>
-            <Blur size={"sm"}>
-              <Button
-                variant="outline"
-                className="relative md:text-lg text-sm w-max rounded-full bg-indigo-600 border-none font-bold text-white hover:bg-indigo-500 hover:text-white hover:scale-[103%] transition-all duration-250 shadow-lg"
-              >
-                Get Started
-              </Button>
-            </Blur>
+            <Button
+              variant="outline"
+              className="relative md:text-lg text-sm w-max rounded-full bg-indigo-600 border-none font-bold text-white hover:bg-indigo-500 hover:text-white hover:scale-[103%] transition-all duration-250 shadow-lg"
+            >
+              Get Started
+            </Button>
           </Link>
         </>
       )}

@@ -11,18 +11,18 @@ import Blur from "./small-components/blur";
 const Hero = () => {
   const { isSignedIn } = useAuth();
 
-  <TypewriterComponent
-    options={{
-      strings: [
-        "Chatbot.",
-        "Image Generation.",
-        "Blog Writing.",
-        "Mail Writing.",
-      ],
-      autoStart: true,
-      loop: true,
-    }}
-  />;
+  //   <TypewriterComponent
+  //     options={{
+  //       strings: [
+  //         "Chatbot.",
+  //         "Image Generation.",
+  //         "Blog Writing.",
+  //         "Mail Writing.",
+  //       ],
+  //       autoStart: true,
+  //       loop: true,
+  //     }}
+  //   />;
 
   return (
     <heading className="xl:ms-[17%] md:ms-[7%] mx-4 xl:py-28 py-16 flex xl:flex-row flex-col-reverse xl:justify-start justify-center items-center xl:gap-0 gap-10">
