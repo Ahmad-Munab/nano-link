@@ -2,6 +2,7 @@ import GetPrismaClient from "./prismaClient";
 import shortid from "shortid";
 
 export const getURLs = async (userId) => {
+  console.log("-------came here", userId);
   const prisma = GetPrismaClient();
   try {
     const urls = await prisma.uRL.findMany({ where: { userId: userId } });

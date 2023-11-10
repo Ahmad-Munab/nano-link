@@ -1,14 +1,15 @@
-import { auth } from "@clerk/nextjs";
+import { currentUser } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
-import { createURL, findURLs } from "../../lib/url";
+import { createURL, getURLs } from "../../lib/url";
 
 export async function GET(req) {
-  const { user } = auth(req);
+  const user = await currentUser();
+  console.log("-came here:", user.id);
   if (!user?.id)
     return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
 
   try {
-    const res = await findURLs(user.id);
+    const res = await getURLs(user.id);
 
     return NextResponse.json(res, { status: res.status });
   } catch (error) {
@@ -17,7 +18,7 @@ export async function GET(req) {
 }
 
 export async function POST(req) {
-  const { user } = auth(req);
+  const user = await currentUser();
   if (!user?.id)
     return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
 

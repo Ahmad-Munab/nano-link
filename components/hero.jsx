@@ -38,7 +38,7 @@ const Hero = () => {
         </article>
 
         <Link
-          href={isSignedIn ? "" : "/sign-up"}
+          href={isSignedIn ? "#" : "/sign-up"}
           className="flex flex-col gap-3 w-max justify-center items-start mt-4"
         >
           <Blur>
