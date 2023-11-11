@@ -4,7 +4,6 @@ import shortid from "shortid";
 const prisma = GetPrismaClient();
 
 export const getURLs = async (userId) => {
-  console.log("-------came here", userId);
   try {
     const urls = await prisma.uRL.findMany({ where: { userId: userId } });
 
@@ -44,6 +43,7 @@ export const createURL = async (userId, long) => {
     });
 
     if (typeof url === "object") {
+      console.log("Created URL: ", url);
       return { url, status: 200 };
     }
     throw new Error(url);

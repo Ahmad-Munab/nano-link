@@ -22,7 +22,7 @@ const NavbarRight = ({ noSideBar, classes }) => {
       className={cn(
         "flex items-center sm:gap-x-4 gap-x-2 ml-auto",
         classes,
-        noSideBar ?? "gap-x-4"
+        noSideBar && "gap-x-4"
       )}
     >
       <div className={cn("sm:block hidden", noSideBar && "block")}>
@@ -40,7 +40,7 @@ const NavbarRight = ({ noSideBar, classes }) => {
                 noSideBar && "block"
               )}
             >
-              {user?.fullName}
+              {user?.fullName.length < 10 ? user?.fullName : user?.firstName}
             </p>
             <UserButton />
           </ClerkLoaded>

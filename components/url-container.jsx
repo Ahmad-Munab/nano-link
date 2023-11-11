@@ -1,8 +1,9 @@
 "use client";
 
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import URLs from "./small-components/urls";
 import URL_Input from "./url-input";
+import axios from "axios";
 
 const URL_Container = () => {
   const [urls, setUrls] = useState([]);
@@ -15,6 +16,9 @@ const URL_Container = () => {
         const { urls } = response.data;
         setUrls(urls);
       } catch (error) {
+        if (error?.response?.status === "401") {
+          return setUrls([]);
+        }
         console.error(error);
       }
 
@@ -22,12 +26,12 @@ const URL_Container = () => {
     };
 
     fetchUrls();
-  }, []);
+  }, [setLoading, setUrls]);
 
   return (
     <div
       id="url-container"
-      className="xl:mx-[25%] md:mx-[10%] mx-4 xl:py-28 py-16 flex flex-col justify-center items-center md:gap-10 gap-6"
+      className="xl:mx-[25%] md:mx-[10%] mx-4 xl:py-24 py-10 flex flex-col justify-center items-center md:gap-10 gap-6"
     >
       <div className="flex flex-col gap-3">
         {" "}
@@ -37,9 +41,12 @@ const URL_Container = () => {
         <div className="mx-auto rounded-xl w-[7rem] h-[6px] bg-indigo-700"></div>
       </div>
       <URL_Input setUrls={setUrls} />
-      <Suspense>
-        <URLs loading={loading} urls={urls} />
-      </Suspense>
+      <URLs
+        loading={loading}
+        setLoading={setLoading}
+        urls={urls}
+        setUrls={setUrls}
+      />
     </div>
   );
 };

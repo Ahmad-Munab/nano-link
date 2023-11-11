@@ -6,9 +6,12 @@ import { Input } from "./ui/input";
 import axios from "axios"; // import axios library
 import toast from "react-hot-toast"; // import react-hot-toast library
 import { useUser } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
 
 const URL_Input = ({ setUrls }) => {
+  const router = useRouter();
   const user = useUser();
+
   useEffect(() => {
     if (user.isSignedIn) {
       document
@@ -20,6 +23,11 @@ const URL_Input = ({ setUrls }) => {
   const urlInput = useRef();
   // create a function to handle the button click
   const onShorten = async () => {
+    if (!user.isSignedIn) {
+      toast.error("Please sign in before continuing");
+      return router.push("/sign-in");
+    }
+
     const urlValue = urlInput.current.value.trim();
     if (!urlValue) return toast.error("Enter a valid URL");
 
@@ -38,8 +46,13 @@ const URL_Input = ({ setUrls }) => {
       toast.dismiss();
       toast.success(`URL Shortened`);
     } catch (error) {
-      // show an error toast with the error message
       toast.dismiss();
+
+      if (error?.response?.status === "401") {
+        toast.error("You need to be logged in");
+        return redirect("/sign-in");
+      }
+      // show an error toast with the error message
       toast.error(error.message);
     }
   };
@@ -50,12 +63,12 @@ const URL_Input = ({ setUrls }) => {
           type="text"
           placeholder="Enter Long URL"
           ref={urlInput}
-          className="text-white/90 shadow-xl"
+          className="text-white/90 shadow-xl md:text-2xl text-xl p-6"
         />
         <Button
           variant="outline"
           onClick={onShorten}
-          className="bg-indigo-600 hover:bg-indigo-500 dark:text-white/90 text-white/90 shadow-xl"
+          className="bg-indigo-700 hover:bg-indigo-600 dark:text-white text-white hover:text-white shadow-2xl md:text-2xl text-xl p-6"
         >
           Shorten
         </Button>

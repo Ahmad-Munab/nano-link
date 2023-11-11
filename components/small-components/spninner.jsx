@@ -1,6 +1,13 @@
-const Spinner = () => {
+import { cn } from "@/lib/utils";
+
+const Spinner = ({ size }) => {
   return (
-    <div className="border-gray-300 h-20 w-20 animate-spin rounded-full border-8 border-t-blue-600"></div>
+    <div
+      className={cn(
+        "border-gray-300 animate-spin rounded-full border-t-blue-600",
+        size
+      )}
+    ></div>
   );
 };
 

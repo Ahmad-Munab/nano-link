@@ -27,7 +27,7 @@ const Hero = () => {
   return (
     <heading className="xl:ms-[17%] md:ms-[7%] mx-4 xl:py-28 py-16 flex xl:flex-row flex-col-reverse xl:justify-start justify-center items-center xl:gap-0 gap-10">
       <section className="flex flex-col gap-6 text-start xl:w-[40%] w-full ">
-        <h1 className="text-5xl md:text-7xl   font-extrabold text-[#393b42] dark:text-white/90">
+        <h1 className="text-5xl md:text-7xl   font-extrabold text-[#37393f] dark:text-white/90">
           More than just shorter links
         </h1>
 
@@ -38,14 +38,20 @@ const Hero = () => {
         </article>
 
         <Link
-          href={isSignedIn ? "#" : "/sign-up"}
+          href={isSignedIn ? "/#" : "/sign-up"}
+          // onClick={() => {
+          //   !isSignedIn &&
+          //     document
+          //       .querySelector("#url-container")
+          //       .scrollIntoView({ behavior: "smooth" });
+          // }}
           className="flex flex-col gap-3 w-max justify-center items-start mt-4"
         >
           <Blur>
             {" "}
             <Button
               varient="outline"
-              className="relative md:text-lg text-white/90 text-md p-4 md:p-6 rounded-full font-semibold bg-indigo-700 hover:bg-indigo-600  hover:scale-[102%] transition-all duration-150 shadow-lg"
+              className="relative md:text-lg text-white text-md p-4 md:p-6 rounded-full font-semibold bg-indigo-700 hover:bg-indigo-600  hover:scale-[102%] transition-all duration-150 shadow-lg"
             >
               Start Shortening For Free
             </Button>

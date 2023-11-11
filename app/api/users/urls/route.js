@@ -4,7 +4,6 @@ import { createURL, getURLs } from "../../lib/url";
 
 export async function GET(req) {
   const user = await currentUser();
-  console.log("-came here:", user.id);
   if (!user?.id)
     return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
 

@@ -9,6 +9,7 @@ export const createUser = async (id, email) => {
     });
 
     if (typeof user === "object") {
+      console.log("User Created: ", user)
       return user;
     }
     throw new Error(user);
