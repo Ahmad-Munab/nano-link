@@ -1,6 +1,6 @@
 import GetPrismaClient from "./prismaClient";
 
-const prisma = GetPrismaClient;
+const prisma = GetPrismaClient();
 
 export const createUser = async (id, email) => {
   try {

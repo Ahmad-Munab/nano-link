@@ -1,9 +1,10 @@
 import GetPrismaClient from "./prismaClient";
 import shortid from "shortid";
 
+const prisma = GetPrismaClient();
+
 export const getURLs = async (userId) => {
   console.log("-------came here", userId);
-  const prisma = GetPrismaClient();
   try {
     const urls = await prisma.uRL.findMany({ where: { userId: userId } });
 
@@ -19,7 +20,6 @@ export const getURLs = async (userId) => {
 };
 
 export const createURL = async (userId, long) => {
-  const prisma = GetPrismaClient();
   try {
     const duplicate = await prisma.uRL.findFirst({
       where: { userId, long },

@@ -8,7 +8,7 @@ export default function Page() {
   const router = useRouter()
   
   if (isSignedIn) {
-    return router.push("/dashboard")
+    return router.push("/")
   } else {
     return <SignIn/>
   }
