@@ -63,7 +63,7 @@ const URL_Input = ({ setUrls }) => {
           type="text"
           placeholder="Enter Long URL"
           ref={urlInput}
-          className="text-white/90 shadow-xl md:text-2xl text-xl p-6"
+          className="dark:text-white/90 text-gray-800 shadow-xl md:text-2xl text-xl p-6"
         />
         <Button
           variant="outline"

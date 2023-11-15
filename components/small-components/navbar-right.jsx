@@ -42,7 +42,7 @@ const NavbarRight = ({ noSideBar, classes }) => {
             >
               {user?.fullName.length < 10 ? user?.fullName : user?.firstName}
             </p>
-            <UserButton />
+            <UserButton afterSignOutUrl="/sign-in" />
           </ClerkLoaded>
         </>
       ) : (
