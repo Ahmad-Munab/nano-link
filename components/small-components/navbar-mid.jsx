@@ -14,7 +14,7 @@ const NavbarMid = () => {
       >
         Features
       </Button>
-      <Button
+      {/* <Button
         onClick={() => {
           document
             .querySelector("#about")
@@ -24,7 +24,7 @@ const NavbarMid = () => {
         className="md:text-lg text-sm w-max font-bold text-black/70 dark:text-white/90 rounded-full"
       >
         About
-      </Button>
+      </Button> */}
       <Button
         onClick={() => {
           console.log("Will ad contact us modal");

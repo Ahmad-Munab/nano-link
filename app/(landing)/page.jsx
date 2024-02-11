@@ -1,3 +1,4 @@
+import FeaturesSection from "@/components/features-section";
 import Hero from "@/components/hero";
 import URL_Container from "@/components/url-container";
 import { Suspense } from "react";
@@ -9,6 +10,7 @@ const LandingPage = () => {
       <Suspense>
         <URL_Container />
       </Suspense>
+      <FeaturesSection/>
     </div>
   );
 };
